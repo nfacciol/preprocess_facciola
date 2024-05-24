@@ -5,7 +5,7 @@ This python package is prepared by Nicholas Facciola.
 
 ### Install
 
-`pip install git+ssh://git@github.com/nfacciol/preprocess_facciola.git`
+`pip install git+https://github.com/nfacciol/preprocess_facciola.git`
 
 ### Uninstall
 
