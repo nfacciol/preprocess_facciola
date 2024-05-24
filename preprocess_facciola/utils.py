@@ -305,19 +305,29 @@ def _get_nouns(x):
       counts += 1
    return nouns, counts
 
-def _detect_lang(x):
+def _detect_lang(x, proxy):
    '''
    attempts to detect the language of x
    '''
-   translator = Translator()
+   if proxy:
+      p_dict = {'http://proxy-dmz' :'intel.com:911/',
+               }
+   else:
+      p_dict ={}
+   translator = Translator(proxies=p_dict)
    return translator.detect(x).lang
 
 
-def _translate_to(x, to = 'es'):
+def _translate_to(x, proxy, to = 'es'):
    '''
    return translated text based on iso 639 code [default is spanish]
    '''
-   translator = Translator()
+   if proxy:
+      p_dict = {'http://proxy-dmz' :'intel.com:911/',
+               }
+   else:
+      p_dict ={}
+   translator = Translator(proxies=p_dict)
    try:
       translated = translator.translate(x, dest = to)
       return str(translated)
