@@ -148,14 +148,14 @@ def get_nouns(x):
    '''
    return utils._get_nouns(x)
 
-def detect_lang(x):
+def detect_lang(x, proxy):
    '''
    attempts to detect the language of x
    '''
-   return utils._detect_lang(x)
+   return utils._detect_lang(x, proxy)
 
-def translate_to(x, to = 'es'):
+def translate_to(x, proxy, to = 'es'):
    '''
    return translated text based on iso 639 code [default is spanish]
    '''
-   return utils._translate_to(x, to)
+   return utils._translate_to(x, proxy, to)
